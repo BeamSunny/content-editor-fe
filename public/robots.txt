@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://biggerlandthai.com
+
+# Sitemaps
+Sitemap: https://biggerlandthai.com/sitemap.xml

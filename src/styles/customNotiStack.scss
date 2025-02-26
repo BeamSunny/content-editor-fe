@@ -1,0 +1,44 @@
+.notistack-MuiContent {
+    svg {
+        font-size: 30px !important;
+        margin: 0 0.5em 0 0;
+        width: 35px;
+        height: 35px;
+    }
+}
+
+.notistack-MuiContent-error {
+    border: 2px solid var(--color-state-error) !important;
+    background-color: var(--color-state-error-second) !important;
+
+    svg {
+        color: var(--color-state-error) !important;
+    }
+}
+
+.notistack-MuiContent-success {
+    border: 2px solid var(--color-state-success) !important;
+    background-color: var(--color-state-success-second) !important;
+
+    svg {
+        color: var(--color-state-success) !important;
+    }
+}
+
+.notistack-MuiContent-warning {
+    border: 2px solid var(--color-state-warning) !important;
+    background-color: var(--color-state-warning-second) !important;
+
+    svg {
+        color: var(--color-state-warning) !important;
+    }
+}
+
+.notistack-MuiContent-info {
+    border: 2px solid var(--color-state-info) !important;
+    background-color: var(--color-state-info-second) !important;
+
+    svg {
+        color: var(--color-state-info) !important;
+    }
+}

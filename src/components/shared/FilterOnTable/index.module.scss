@@ -1,0 +1,80 @@
+@import 'src/styles/extend.scss';
+
+.box {
+  position: relative;
+  height: 35px;
+  width: 100%;
+  padding: 0.3em 2.3em 0.3em 0.6em;
+  border-radius: var(--border-radius-sm);
+  border: 1px solid var(--color-gray-2);
+  background-color: var(--color-background);
+
+  &[aria-checked='true'] {
+    background-color: var(--color-primary-main);
+
+    p,
+    svg {
+      color: var(--color-background);
+    }
+  }
+
+  svg {
+    position: absolute;
+    right: 5px;
+    top: 55%;
+    transform: translateY(-50%);
+    transition: transform 0.1s;
+
+    &[aria-checked='false'] {
+      transform: rotate(180deg) translateY(50%);
+    }
+  }
+}
+
+.group {
+  position: relative;
+  min-width: 300px;
+  max-height: 300px;
+
+  .padding {
+    padding: 0.25em 0.5em;
+    width: calc(100% - 0.5em);
+  }
+
+  .bottom {
+    position: sticky;
+    bottom: 0;
+    background-color: var(--color-white);
+    border-top: 1px solid var(--color-gray-1);
+
+    @extend .padding;
+  }
+
+  .wrap {
+    .header {
+      position: sticky;
+      padding: 0.5em;
+      top: 0;
+      background-color: var(--color-white);
+      border-bottom: 1px solid var(--color-gray-5);
+
+      .dot {
+        margin: 0 0.1em 0.1em;
+        width: 5px;
+        height: 5px;
+      }
+
+      .inputText {
+        width: 100%;
+        padding: 0.3em 0.5em;
+        border-radius: var(--border-radius-sm);
+        border: 1px solid var(--color-gray-2);
+      }
+    }
+
+    .wrapperOption {
+      padding: 0.5em;
+      height: 100%;
+    }
+  }
+}

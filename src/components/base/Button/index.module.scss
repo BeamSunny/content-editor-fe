@@ -1,0 +1,120 @@
+@import 'src/styles/function.scss';
+
+.buttonSmContainedPrimary {
+    @extend .containedPrimary;
+    @extend .sizeSm;
+}
+
+.buttonSmContainedSecondary {
+    @extend .containedSecondary;
+    @extend .sizeSm;
+}
+
+.buttonSmOutlinedPrimary {
+    @extend .outlinedPrimary;
+    @extend .sizeSm;
+}
+
+.buttonSmOutlinedSecondary {
+    @extend .outlinedSecondary;
+    @extend .sizeSm;
+}
+
+// 
+
+.buttonMdContainedPrimary {
+    @extend .containedPrimary;
+    @extend .sizeMd;
+}
+
+.buttonMdContainedSecondary {
+    @extend .containedSecondary;
+    @extend .sizeMd;
+}
+
+.buttonMdOutlinedPrimary {
+    @extend .outlinedSecondary;
+    @extend .sizeMd;
+}
+
+.buttonMdOutlinedSecondary {
+    @extend .outlinedSecondary;
+    @extend .sizeMd;
+}
+
+// 
+
+.buttonLgContainedPrimary {
+    @extend .containedPrimary;
+    @extend .sizeLg;
+}
+
+.buttonLgContainedSecondary {
+    @extend .containedSecondary;
+    @extend .sizeLg;
+}
+
+.buttonLgOutlinedPrimary {
+    @extend .outlinedSecondary;
+    @extend .sizeMd;
+}
+
+.buttonLgOutlinedSecondary {
+    @extend .outlinedSecondary;
+    @extend .sizeLg;
+}
+
+// Factor
+
+.sizeSm {
+    font-size: toRem(18);
+
+    img {
+        width: toRem(18);
+        height: toRem(18);
+    }
+}
+
+.sizeMd {
+    font-size: toRem(20);
+
+    img {
+        width: toRem(20);
+        height: toRem(20);
+    }
+}
+
+
+.sizeLg {
+    font-size: toRem(22);
+
+    img {
+        width: toRem(22);
+        height: toRem(22);
+    }
+}
+
+
+.containedPrimary {
+    color: var(--color-text);
+    border: 1px solid var(--color-primary-main);
+    background-color: var(--color-primary-main);
+}
+
+.containedSecondary {
+    color: var(--color-text);
+    border: 1px solid var(--color-secondary-main);
+    background-color: var(--color-secondary-main);
+}
+
+.outlinedPrimary {
+    color: var(--color-secondary-main);
+    border: 1px solid var(--color-secondary-main);
+    background-color: var(--color-background);
+}
+
+.outlinedSecondary {
+    color: var(--color-secondary-main);
+    border: 1px solid var(--color-secondary-main);
+    background-color: var(--color-background);
+}

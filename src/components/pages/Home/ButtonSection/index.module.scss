@@ -1,0 +1,21 @@
+
+.gap {
+    gap: var(--gap-md);
+}
+
+.code {
+    background-color: var(--color-state-info-second);
+    border: 1px solid var(--color-state-info);
+    padding: 0 0.3em;
+    border-radius: var(--border-radius-sm);
+    color: var(--color-state-error);
+}
+
+.box {
+    margin: 1em 0;
+    padding: 1em;
+    border: 1px solid var(--color-gray-2);
+    background-color: var(--color-gray-1);
+    border-radius: var(--border-radius-md);
+    gap: var(--gap-lg);
+}

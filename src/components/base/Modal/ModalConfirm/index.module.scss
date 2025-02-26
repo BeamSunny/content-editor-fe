@@ -1,0 +1,9 @@
+.container {
+    padding: 2em 1.5em;
+    gap: var(--gap-md);
+
+    .groupBtn {
+        margin-top: 1.5em;
+        gap: var(--gap-lg);
+    }
+}

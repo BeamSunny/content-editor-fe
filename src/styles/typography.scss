@@ -1,0 +1,110 @@
+@import './function.scss';
+
+@font-face {
+    font-family: FCIconicRegular;
+    src: url('../fonts/fcIconicRegular.ttf');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: FCIconicBold;
+    src: url('../fonts/fcIconicBold.ttf');
+    font-display: swap;
+}
+
+* {
+    font-family: FCIconicRegular;
+}
+
+.bold {
+    font-family: FCIconicBold !important;
+    letter-spacing: 0px !important;
+    font-weight: 100 !important;
+}
+
+.regular {
+    font-family: FCIconicRegular !important;
+    letter-spacing: 0px !important;
+    font-weight: 100 !important;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+    color: var(--color-text);
+}
+
+h1 {
+    font-size: toRem(64);
+    @extend .bold;
+
+    @media (max-width: var(--breakpoint-md)) {
+        font-size: toRem(39);
+    }
+}
+
+h2 {
+    font-size: toRem(48);
+    @extend .bold;
+
+    @media (max-width: var(--breakpoint-md)) {
+        font-size: toRem(32);
+    }
+}
+
+h3 {
+    font-size: toRem(32);
+    @extend .bold;
+
+    @media (max-width: var(--breakpoint-md)) {
+        font-size: toRem(27);
+    }
+}
+
+h4 {
+    font-size: toRem(24);
+    @extend .bold;
+
+    @media (max-width: var(--breakpoint-md)) {
+        font-size: toRem(22);
+    }
+}
+
+h5 {
+    font-size: toRem(20);
+    @extend .bold;
+}
+
+h6 {
+    font-size: toRem(18);
+    @extend .bold;
+}
+
+p {
+    font-size: toRem(24);
+    @extend .regular;
+}
+
+th,
+td,
+input,
+select,
+option,
+textarea {
+    font-size: toRem(20);
+    @extend .regular;
+}
+
+.color-red {
+    color: var(--color-state-error);
+}
