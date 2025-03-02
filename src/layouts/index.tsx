@@ -14,9 +14,9 @@ type Props = {
 const Layout: React.FC<Props> = ({ children }) => {
   return (
     <div className={styles.gridLayout}>
-      <div className={styles.gridNavTop}>
+      {/* <div className={styles.gridNavTop}>
         <NavTopBar />
-      </div>
+      </div> */}
       <div className={styles.gridData}>{children}</div>
     </div>
   )

@@ -1,28 +1,16 @@
 // Lib
-import React from 'react'
+import React, { useState } from 'react'
 import type { NextPage } from 'next'
 import { withFormik, Form } from 'formik'
-import { Divider, TValueOption } from '@datability/8ui'
-
-// Images
-import LogoPNG from '@images/commons/logo.png?webp'
+import { TValueOption } from '@datability/8ui'
 
 // Include in project
 import Layout from '@layouts/index'
 import { getLanguage } from '@i18n/index'
 import yupHome from '@validations/yupHome.validate'
-import {
-  ButtonSection,
-  DividerSection,
-  InputSection,
-  ManuSection,
-  NotificationSection,
-  LoadingSection,
-  ModalConfirmSection,
-  TableSection,
-  ChipSection,
-} from '@components/pages/Home'
 import { TTable } from '@components/base/Table'
+import dynamic from 'next/dynamic'
+import { OutputData } from '@editorjs/editorjs'
 
 export type THome = {
   inputDate: string
@@ -80,29 +68,21 @@ const intitialValue: THome = {
   },
 }
 
-const Home: NextPage = () => {
-  console.log(process.env.NEXT_PUBLIC_STATE)
+const Editor: NextPage = () => {
+  let EditorPage = dynamic(() => import('../../components/shared/EditorComponent'), { ssr: false })
+
+  const [content, setContent] = useState(null)
+
+  console.log(content, '<<<< content')
+
   return (
     <Layout>
       <Form className="column">
-        <img src={LogoPNG} alt="Logo Datability" width={150} className="align-self" />
-        <ButtonSection />
-        <Divider />
-        <ChipSection />
-        <Divider />
-        <DividerSection />
-        <Divider />
-        <ManuSection />
-        <NotificationSection />
-        <Divider />
-        <LoadingSection />
-        <Divider />
-        <ModalConfirmSection />
-        <Divider />
-        <InputSection />
-        <Divider />
-        <TableSection />
-        <Divider />
+        <div className="p-6">
+          <h1 className="text-xl font-bold">Editor.js ตัวอย่าง</h1>
+
+          <EditorPage />
+        </div>
       </Form>
     </Layout>
   )
@@ -110,22 +90,13 @@ const Home: NextPage = () => {
 
 export async function getServerSideProps({ params }: any) {
   const language = getLanguage(params.lang)
-
-  return {
-    props: {
-      language,
-    },
-  }
+  return { props: { language } }
 }
 
-const EnhancedHome = withFormik({
-  mapPropsToValues: () => ({
-    ...intitialValue,
-  }),
+const EnhanceEditor = withFormik({
+  mapPropsToValues: () => ({ ...intitialValue }),
   validationSchema: yupHome,
-  handleSubmit: () => {
-    console.log('Skip')
-  },
-})(Home)
+  handleSubmit: () => null,
+})(Editor)
 
-export default EnhancedHome
+export default EnhanceEditor
