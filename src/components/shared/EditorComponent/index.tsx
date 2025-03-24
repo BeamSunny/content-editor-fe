@@ -3,6 +3,7 @@ import EditorJS from '@editorjs/editorjs'
 import Header from '@editorjs/header'
 import List from '@editorjs/list'
 import ImageTool from '@editorjs/image'
+import { Button } from '@components/base'
 
 const LinkTool = require('@editorjs/link')
 

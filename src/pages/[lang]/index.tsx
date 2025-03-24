@@ -1,5 +1,5 @@
 // Lib
-import React, { useState } from 'react'
+import React from 'react'
 import type { NextPage } from 'next'
 import { withFormik, Form } from 'formik'
 import { TValueOption } from '@datability/8ui'
@@ -10,7 +10,6 @@ import { getLanguage } from '@i18n/index'
 import yupHome from '@validations/yupHome.validate'
 import { TTable } from '@components/base/Table'
 import dynamic from 'next/dynamic'
-import { OutputData } from '@editorjs/editorjs'
 
 export type THome = {
   inputDate: string
@@ -71,17 +70,22 @@ const intitialValue: THome = {
 const Editor: NextPage = () => {
   let EditorPage = dynamic(() => import('../../components/shared/EditorComponent'), { ssr: false })
 
-  const [content, setContent] = useState(null)
-
-  console.log(content, '<<<< content')
-
   return (
     <Layout>
       <Form className="column">
         <div className="p-6">
-          <h1 className="text-xl font-bold">Editor.js ตัวอย่าง</h1>
-
           <EditorPage />
+
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/LXb3EKWsInQ?si=k-Cr7GXY4_JfrlQw"
+            title="YouTube video player"
+            // fra="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+          ></iframe>
         </div>
       </Form>
     </Layout>

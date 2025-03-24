@@ -1,35 +1,38 @@
 // Lib
 import React from 'react'
-import { useDispatch, useSelector } from 'react-redux'
 import i18next from 'i18next'
 
-// Images
-import LightModeIcon from '@images/commons/sun'
-import DarkModeIcon from '@images/commons/moon'
-
 // Include in project
-import type { RootState } from '@states/store'
-import { setTheam } from '@states/slice/theme'
 import styles from './index.module.scss'
 
-const NavTopBar: React.FC = () => {
+type Props = {
+  filter: string
+  onChange: (data: string) => void
+}
+
+const NavTopBar: React.FC<Props> = ({ filter, onChange }) => {
   const { t } = i18next
-  const theme = useSelector((state: RootState) => state.theme.theme)
-  const dispatch = useDispatch()
+
+  const buttonList = [
+    { label: 'ปกติ  (Normal)', value: 'normal' },
+    { label: 'Deuteranopia (ตาบอดสีเขียว)', value: 'deuteranopia' },
+    { label: 'Protanopia (ตาบอดสีแดง)', value: 'protanopia' },
+    { label: 'Tritanopia (ตาบอดสีน้ำเงิน)', value: 'tritanopia' },
+  ]
 
   return (
-    <div className={`row align-center justify-center ${styles.box}`}>
-      <h1 className="text-center">{t<string>('componentBase')}</h1>
+    <div className={`row align-center  ${styles.box}`}>
+      <div className={`row align-center justify-space-between gap-lg ${styles.wrapper}`}>
+        <h2>Editor Js</h2>
 
-      {theme === 'LIGHT' ? (
-        <LightModeIcon className="cursor" onClick={() => dispatch(setTheam({ theme: 'DARK' }))} />
-      ) : (
-        <DarkModeIcon
-          className="cursor"
-          style={{ color: 'var(--color-black-1)' }}
-          onClick={() => dispatch(setTheam({ theme: 'LIGHT' }))}
-        />
-      )}
+        <div className="row gap-md">
+          {buttonList?.map((ele, index) => (
+            <button key={index} className={`cursor ${styles.button}`} onClick={() => onChange(ele.value)}>
+              {ele.label}
+            </button>
+          ))}
+        </div>
+      </div>
     </div>
   )
 }

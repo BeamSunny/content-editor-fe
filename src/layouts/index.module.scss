@@ -1,4 +1,3 @@
-
 .gridLayout {
   display: grid;
   grid-template-areas:
@@ -6,7 +5,7 @@
     '. Data .'
     '. Data .';
   grid-template-columns: 1fr 990px 1fr;
-  grid-template-rows: 70px 1fr 1fr;
+  grid-template-rows: auto 1fr 1fr;
   background-color: var(--color-background);
   min-height: 100vh;
   max-width: 100vw;
@@ -18,9 +17,7 @@
   .gridNavTop {
     grid-area: NavTop;
     position: sticky;
-    padding: 10px 0;
     top: 0;
-    background-color: var(--color-gray-1);
     z-index: var(--z-index-nav);
   }
 

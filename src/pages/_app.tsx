@@ -39,6 +39,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
 
   return (
     <Provider store={store}>
+      <title>Editor Test</title>
       <StyleVariable>
         <SnackbarProvider
           maxSnack={5}
